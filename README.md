@@ -1,4 +1,4 @@
-# Brown CS22 Spring 2024: Lean project
+# Brown CS22 Spring 2025: Lean project
 
 
 ## Directions for setting up GitHub Codespaces
@@ -15,11 +15,11 @@ which include an increased quota on Codespace hours.
 
 Note: we don't expect you to have any experience with git beyond creating a GitHub account!
 
-* If you aren't already there, navigate to the [CS22-Lean-2024 GitHub page](https://github.com/brown-cs22/CS22-Lean-2024).
+* If you aren't already there, navigate to the [CS22-Lean-2025 GitHub page](https://github.com/brown-cs22/CS22-Lean-2025).
 * Click the green button that says `<> Code`, then select the `Codespaces` tab in the dropdown that appears.
 * Click the green button that says `Create Codespace on main`.
 * Wait a few minutes for the Codespace to configure itself. Eventually, you'll see a VS Code interface in your browser.
-* Once the VS Code interface has loaded, close that tab and return to the [CS22-Lean-2024 GitHub page](https://github.com/brown-cs22/CS22-Lean-2024). Refresh the page.
+* Once the VS Code interface has loaded, close that tab and return to the [CS22-Lean-2025 GitHub page](https://github.com/brown-cs22/CS22-Lean-2025). Refresh the page.
 * Click the green `<> Code` button again, and select the Codespaces tab if it isn't already selected.
 * You should now see a Codespace appear in the list under the heading `On current branch`. It will have a random two-word name (e.g., "psychic cod," "cautious memory").
 * Click the three dots `⋯` next to that Codespace (*not* the similar icon that appears at the top of the dropdown!).
