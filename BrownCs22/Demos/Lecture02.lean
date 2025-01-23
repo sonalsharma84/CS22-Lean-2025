@@ -5,7 +5,7 @@ open BrownCs22.Nat
 
 /-
 
-Welcome to Lean!
+# Welcome to Lean!
 
 We'll get a more detailed introduction later.
 For now, meet our new friend, the `#check` command.
@@ -14,7 +14,7 @@ For now, meet our new friend, the `#check` command.
 
 -/
 
-#check 1
+#check 1 + 4
 
 #check 5
 
@@ -42,7 +42,7 @@ How could I translate
 
 /-
 
-But we can write things with quantifiers (`∀` and `∃`):
+We can write things with quantifiers (`∀` and `∃`):
 
 -/
 
@@ -65,8 +65,15 @@ So is `isOdd`.
 #check isOdd 10
 
 
+/-
+How do I write "the sum of any two odd numbers is even"?
+-/
+
+#check ∀ x : ℕ, ∀ y : ℕ, isOdd x ∧ isOdd y → isEven (x + y)
+
+
 def PerfectSquare (n : ℕ) : Prop :=
-  sorry -- `n` is a perfect square
+  ∃ k : ℕ, n = k * k       -- `n` is a perfect square
 
 
 #check PerfectSquare 22
@@ -86,9 +93,9 @@ variable (n : ℕ)
 
 
 
--- It doesn't make sense for us to ask about P (n) + 1
+-- It doesn't make sense for us to ask about PerfectSquare (n) + 1
 
--- #check P (n) + 1
+-- #check PerfectSquare (n) + 1
 
 
 

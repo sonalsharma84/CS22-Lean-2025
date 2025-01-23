@@ -7,6 +7,9 @@ namespace Nat
 def isOdd (n : ℕ) : Prop :=
   ∃ k : ℕ, n = 2 * k + 1
 
+def isEven (n : ℕ) : Prop :=
+  ∃ k : ℕ, n = 2 * k
+
 lemma quotient_remainder {a b c : ℕ} (h : a % b = c) : ∃ q, a = q*b + c := by
   use a/b
   rw [← h, mul_comm, Nat.div_add_mod]
@@ -14,7 +17,6 @@ lemma quotient_remainder {a b c : ℕ} (h : a % b = c) : ∃ q, a = q*b + c := b
 
 end Nat
 
-universe u
 
 lemma Set.inter_union_cancel_left {α : Type u} {s t : Set α} :
   (s ∩ t) ∪ s = s := by simp
