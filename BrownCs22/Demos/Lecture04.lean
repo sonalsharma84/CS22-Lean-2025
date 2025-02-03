@@ -176,6 +176,9 @@ example : p → (p → q) → q := by
 Show that these hypotheses are contradictory.
 
 -/
+section
+
+
 
 variable (al_ac : Prop) -- the proposition "Alan likes acorns"
 variable (betty_beg : Prop) -- the proposition "Betty likes begonias"
@@ -203,6 +206,9 @@ theorem these_are_contradictory
                                  -- We've finished all our goals.
 
 
+
+
+end
 /-
 
 You've just seen the missing connective.
@@ -213,10 +219,23 @@ if we have hypotheses `hp : p` and `hnp : ¬ p`, then
 `contradiction` will prove any goal.
 
 How to introduce a negation? This uses a technique called
-"proof by contradiction", which we'll motivate in class soon.
+"proof by contradiction", which we motivated in class.
+
+
+
+
+One form looks familiar: to prove a negation `¬ p`,
+we can write `by_contra hp` to create the assumption `hp`. Our goal
+becomes to prove `False`.
 
 -/
 
+example : (p ∧ ¬ q) → ¬ (p ∧ q) := by
+  assume hpnq
+  by_contra hpq     -- This is our "proof by contradiction" step
+  eliminate hpnq with hp hnq
+  eliminate hpq with hp' hq
+  contradiction
 
 
 
