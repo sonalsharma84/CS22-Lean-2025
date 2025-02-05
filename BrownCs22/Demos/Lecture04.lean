@@ -1,5 +1,5 @@
 import BrownCs22.Library.Tactics
-
+import BrownCs22.Library.TruthTables
 namespace Lecture04
 
 /-
@@ -35,6 +35,7 @@ The line after the `⊢` is our current goal.
 
 -/
 
+
 example : p → p := by
   assume hp
   assumption
@@ -57,13 +58,14 @@ example : p → q → p ∧ q := by
   assume hp
   assume hq
   split_goal
-  { assumption } -- when we have multiple goals, we sometimes put each subproof in {...}
-  { assumption }  -- but this is mainly for style!
+  { assumption }
+  { assumption }
   done
 
-example : p → p ∨ q := by
-  assume hp
-  left
+example : p → p ∧ q := by
+  assume hnewfact
+  split_goal
+  assumption
   assumption
   done
 
@@ -91,7 +93,7 @@ example : (p ∧ q) → (p ↔ q) := by
 
 example : p ∧ q → q ∧ p := by
   assume hpq
-  eliminate hpq with hp hq
+  eliminate hpq with hp11111 hq
   split_goal
   { assumption }
   { assumption }
@@ -236,6 +238,11 @@ example : (p ∧ ¬ q) → ¬ (p ∧ q) := by
   eliminate hpnq with hp hnq
   eliminate hpq with hp' hq
   contradiction
+
+#truth_table (p ∧ ¬ q) → ¬ (p ∧ q)
+example : (p ∧ ¬ q) → (p ∧ q) := by
+  assume hpnq
+  by_contra hpq
 
 
 
