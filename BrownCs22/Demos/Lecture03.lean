@@ -48,7 +48,7 @@ variable (p q r : Prop)
 
 #check p
 #check p ∧ q
-#check p ∧ (q → r)
+#check p ∧ q → r
 #check p ∨ q ∨ p ∧ r ∧ ¬ (p ∧ q ∧ r)
 
 /-
@@ -66,7 +66,7 @@ A few things to note here.
   * `∧`: and, wedge
   * `∨`: or, vee
   * `¬`: not, neg
-  * `→`: to, imp, rightarrow 
+  * `→`: to, imp, rightarrow
   * `↔`: iff
   * `ℕ`: N, nat
   * `ℤ`: Z, int
